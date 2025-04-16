@@ -32,10 +32,6 @@
         "outbound": "block"
       },
       {
-        "geoip": "cn",
-        "outbound": "block"
-      },
-      {
         "domain_regex": [  // 拦截的域名规则（有需要可以继续添加）
 "(api|ps|sv|offnavi|newvector|ulog.imap|newloc)(.map|).(baidu|n.shifen).com",
 "(.+.|^)(360|so).(cn|com|net)",
