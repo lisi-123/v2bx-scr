@@ -41,5 +41,7 @@ sudo cp -f /root/v2bx-scr/route.json /etc/V2bX/
 sudo cp -f /root/v2bx-scr/custom_outbound.json /etc/V2bX/
 sudo cp -f /root/v2bx-scr/sing_origin.json /etc/V2bX/
 
+V2bX restart
+
 # 输出完成信息
 echo "NodeID 已更新成功！已自动配置warp解锁，v2bx已启动"
