@@ -4,10 +4,13 @@
 apt-get update
 
 # 安装必需的软件包
-apt install sudo -y
 apt install wget -y
 sudo apt install curl -y
 sudo apt install nano -y
+sudo apt install git -y
+
+# 拉取库
+git clone https://github.com/lisi-123/v2bx-scr.git
 
 # 赋予 socks5-check.sh 可执行权限
 chmod +x /root/v2bx-scr/socks5-check.sh
