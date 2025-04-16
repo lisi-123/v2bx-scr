@@ -8,7 +8,7 @@ apt-get update
 apt install sudo -y
 sudo apt install git -y
 
-git clone https://$GITHUB_TOKEN@github.com/lisi-123/v2bx-scr.git
+git clone https://github.com/lisi-123/v2bx-scr.git
 
 ```
 
