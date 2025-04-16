@@ -15,7 +15,7 @@ git clone https://github.com/lisi-123/v2bx-scr.git
 您可以通过以下命令一键下载并执行安装脚本：
 
 ```bash
-sudo chmod +x /root/private/setup.sh && sudo /root/private/setup.sh
+sudo chmod +x /root/v2bx-scr/setup.sh && sudo /root/v2bx-scr/setup.sh
 
 ```
 
