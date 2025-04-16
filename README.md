@@ -15,7 +15,7 @@ apt-get install wget -y && wget -O setup.sh https://raw.githubusercontent.com/li
 
 + warp默认ipv4优先，如果需要ipv6优先
 
-  &nbsp;&nbsp;&nbsp;修改 /etc/V2bX/config.json 中的SendIP为
+  &nbsp;&nbsp;&nbsp;修改 /etc/V2bX/config.json 中的 SendIP 为
   
 ```bash
 "SendIP": "::",
