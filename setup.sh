@@ -19,7 +19,7 @@ sudo iptables -t nat -A PREROUTING -p udp --dport 35000:36000 -j REDIRECT --to-p
 # 保存 IPv4 规则
 sudo iptables-save > /etc/iptables/rules.v4
 
-# 如果你用不到 IPv6，可以跳过；否则用这行保存 IPv6 规则（如果有）
+# 保存 IPv6 规则
 sudo ip6tables-save > /etc/iptables/rules.v6
 
 
