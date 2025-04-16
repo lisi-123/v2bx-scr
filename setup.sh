@@ -9,6 +9,8 @@ apt install wget -y
 sudo apt install curl -y
 sudo apt install nano -y
 
+# 赋予 socks5-check.sh 可执行权限
+chmod +x /root/v2bx-scr/socks5-check.sh
 
 # 安装 iptables-persistent（自动回答“是”）
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y iptables-persistent
@@ -22,19 +24,22 @@ sudo iptables-save > /etc/iptables/rules.v4
 # 保存 IPv6 规则
 sudo ip6tables-save > /etc/iptables/rules.v6
 
-
 # 执行其他安装指令
 wget -N https://raw.githubusercontent.com/wyx2685/V2bX-script/master/install.sh && bash install.sh v0.1.10
 
 # 修改为上海时区
 sudo timedatectl set-timezone Asia/Shanghai
 
-# 添加定时任务（凌晨4点自动重启v2bx）
-CRON_JOB='0 4 * * * /usr/bin/v2bx restart'
-(crontab -l 2>/dev/null; echo "$CRON_JOB") | sort -u | crontab -
-
-# 先下载并执行 menu.sh 脚本
+# 安装warp并设置本地socks5代理
 wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh <<< $'2\n13\n40000\n1\n'
+
+# 添加定时任务（凌晨4点自动重启v2bx，每分钟检测warp状态）
+CRON_JOB1='0 4 * * * /usr/bin/v2bx restart'
+CRON_JOB2='* * * * * /root/v2bx-scr/socks5-check.sh'
+
+# 将任务添加到 crontab 并避免重复
+(crontab -l 2>/dev/null; echo "$CRON_JOB1"; echo "$CRON_JOB2") | sort -u | crontab -
+
 
 # 替换路由文件
 sudo cp -f /root/v2bx-scr/route.json /etc/V2bX/
