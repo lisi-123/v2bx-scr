@@ -7,6 +7,8 @@ apt-get install wget -y && wget -O setup.sh https://raw.githubusercontent.com/li
 
 ```
 
+
+
 脚本自带端口映射：UDP 35000-36000 转发到 50000
 
 
