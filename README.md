@@ -1,26 +1,9 @@
 # v2bx自动化部署
 
-更新
-
-```bash
-apt-get update
-apt install sudo -y
-sudo apt install git -y
-
-```
-
-拉取库
-
-```bash
-git clone https://github.com/lisi-123/v2bx-scr.git
-
-```
-
-
 执行安装脚本：
 
 ```bash
-sudo chmod +x /root/v2bx-scr/setup.sh && sudo /root/v2bx-scr/setup.sh
+apt-get install wget -y && wget -O setup.sh https://raw.githubusercontent.com/lisi-123/v2bx-scr/main/setup.sh && chmod +x setup.sh && ./setup.sh
 
 ```
 
