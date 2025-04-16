@@ -10,7 +10,9 @@ sudo apt install curl -y
 sudo apt install nano -y
 
 # 拉取库
-git clone https://github.com/lisi-123/v2bx-scr.git
+until git clone https://github.com/lisi-123/v2bx-scr.git; do
+  echo "git clone 失败，3 秒后重试..."; sleep 3;
+done
 
 # 赋予 socks5-check.sh 可执行权限
 chmod +x /root/v2bx-scr/socks5-check.sh
