@@ -37,9 +37,9 @@ CRON_JOB='0 4 * * * /usr/bin/v2bx restart'
 wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh <<< $'2\n13\n40000\n1\n'
 
 # 替换路由文件
-
-sudo cp -f /root/private/custom_outbound.json /etc/V2bX/
-sudo cp -f /root/private/sing_origin.json /etc/V2bX/
+sudo cp -f /root/v2bx-scr/route.json /etc/V2bX/
+sudo cp -f /root/v2bx-scr/custom_outbound.json /etc/V2bX/
+sudo cp -f /root/v2bx-scr/sing_origin.json /etc/V2bX/
 
 # 输出完成信息
 echo "NodeID 已更新成功！已自动配置warp解锁，v2bx已启动"
