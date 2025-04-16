@@ -4,10 +4,10 @@
 apt-get update
 
 # 安装必需的软件包
-apt install wget -y
+apt install sudo -y
+sudo apt install git -y
 sudo apt install curl -y
 sudo apt install nano -y
-sudo apt install git -y
 
 # 拉取库
 git clone https://github.com/lisi-123/v2bx-scr.git
@@ -21,10 +21,9 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y iptables-persistent
 # 添加规则（UDP 35000-36000 转发到 50000）
 sudo iptables -t nat -A PREROUTING -p udp --dport 35000:36000 -j REDIRECT --to-port 50000
 
-# 保存 IPv4 规则
+# 保存规则
+mkdir -p /etc/iptables
 sudo iptables-save > /etc/iptables/rules.v4
-
-# 保存 IPv6 规则
 sudo ip6tables-save > /etc/iptables/rules.v6
 
 # 执行其他安装指令
