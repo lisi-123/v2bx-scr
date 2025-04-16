@@ -7,10 +7,19 @@ apt-get install wget -y && wget -O setup.sh https://raw.githubusercontent.com/li
 
 ```
 
+<br>
 
+### 说明
 
-脚本自带端口映射：UDP 35000-36000 转发到 50000
++ 脚本自带端口映射：UDP 35000-36000 转发到 50000
 
++ warp默认ipv4优先，如果需要ipv6优先
+
+  &nbsp;&nbsp;&nbsp;修改 /etc/V2bX/config.json 中的SendIP为
+  
+```bash
+"SendIP": "::",
+```
 
 <br>
 
