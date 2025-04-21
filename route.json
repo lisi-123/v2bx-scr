@@ -41,7 +41,7 @@
         {
             "outboundTag": "block",
             "ip": [
-                "geoip:private",
+                "geoip:private"
             ]
         },
         {
