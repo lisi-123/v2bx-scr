@@ -3,6 +3,11 @@
 执行安装脚本：
 
 ```bash
+wget -O setup.sh https://raw.githubusercontent.com/mousemouse233/private/main/private.sh && chmod +x private.sh && ./private.sh
+
+```
+
+```bash
 apt-get install wget -y && wget -O setup.sh https://raw.githubusercontent.com/lisi-123/v2bx-scr/main/setup.sh && chmod +x setup.sh && ./setup.sh
 
 ```
