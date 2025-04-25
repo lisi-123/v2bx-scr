@@ -50,7 +50,7 @@
       },
       {
         "rule_set": "geosite-cn",
-        "outbound": "block" // 也可以改成"socks_proxy"，让cn的ip走warp出口
+        "outbound": "socks_proxy" // 也可以改成"block"，直接拒绝中国ip的访问
       },
       {
   "domain_regex": [  // 拦截的域名规则（有需要可以继续添加）
