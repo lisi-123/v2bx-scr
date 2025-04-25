@@ -49,7 +49,7 @@
         "outbound": "block"
       },
       {
-        "rule_set": "geoip-cn",
+        "rule_set": "geosite-cn",
         "outbound": "block" // 也可以改成"socks_proxy"，让cn的ip走warp出口
       },
       {
@@ -121,7 +121,15 @@
         "type": "remote",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+      },
+      {
+        "tag": "geosite-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs",
       }
+    ]
+  }
     ]
   },
   "experimental": {
