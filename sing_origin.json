@@ -19,7 +19,7 @@
       "type": "block"
     },
     {
-      "tag": "socks_proxy",  // SOCKS 代理
+      "tag": "socks_proxy",  //warp的本地 SOCKS 代理
       "type": "socks",
       "server": "127.0.0.1",
       "server_port": 40000
@@ -32,29 +32,30 @@
         "outbound": "block"
       },
       {
-        "domain_regex": [  // 拦截的域名规则（有需要可以继续添加）
-"(api|ps|sv|offnavi|newvector|ulog.imap|newloc)(.map|).(baidu|n.shifen).com",
-"(.+.|^)(360|so).(cn|com|net)",
-"(Subject|HELO|SMTP)",
-"(torrent|.torrent|peer_id=|info_hash|get_peers|find_node|BitTorrent|announce_peer|announce.php?passkey=|magnet:|xunlei|sandai|Thunder|XLLiveUD|bt_key)",
-"(^.@)(guerrillamail|guerrillamailblock|sharklasers|grr|pokemail|spam4|bccto|chacuo|027168).(info|biz|com|de|net|org|me|la)",
-"(.?)(xunlei|sandai|Thunder|XLLiveUD)(.)",
-"(.*.||)(dafahao|mingjinglive|botanwang|minghui|dongtaiwang|falunaz|epochtimes|ntdtv|falundafa|falungong|wujieliulan|zhengjian).(org|com|net)",
-"(.*.||)(guanjia.qq.com|qqpcmgr|QQPCMGR)",
-"(.*.||)(rising|kingsoft|duba|xindubawukong|jinshanduba).(com|net|org)",
-"(.*.||)(netvigator|torproject).(com|cn|net|org)",
-"(..||)(visa|mycard|gash|beanfun|bank).",
-"(.*.||)(gov|12377|12315|talk.news.pts.org|creaders|zhuichaguoji|efcc.org|cyberpolice|aboluowang|tuidang|epochtimes|zhengjian|110.qq|mingjingnews|inmediahk|xinsheng|breakgfw|chengmingmag|jinpianwang|qi-gong|mhradio|edoors|renminbao|soundofhope|xizang-zhiye|bannedbook|ntdtv|12321|secretchina|dajiyuan|boxun|chinadigitaltimes|dwnews|huaglad|oneplusnews|epochweekly|cn.rfi).(cn|com|org|net|club|net|fr|tw|hk|eu|info|me)",
-"(.*.||)(miaozhen|cnzz|talkingdata|umeng).(cn|com)",
-"(.*.||)(mycard).(com|tw)",
-"(.*.||)(gash).(com|tw)",
-"(.bank.)",
-"(.*.||)(pincong).(rocks)",
-"(.*.||)(taobao).(com|cn)",
-"(.*.||)(laomoe|jiyou|ssss|lolicp|vv1234|0z|4321q|868123|ksweb|mm126|ping0).(com|cloud|fun|cn|gs|xyz|cc)",
-"(flows|miaoko).(pages).(dev)"
-
-        ],
+        "rule_set": "geoip-cn",
+        "outbound": "block"
+      },
+      {
+  "domain_regex": [  // 拦截的域名规则（有需要可以继续添加）
+        "(api|ps|sv|offnavi|newvector|ulog.imap|newloc)(.map|).(baidu|n.shifen).com",
+        "(.+.|^)(360|so).(com|net)",
+        "(Subject|HELO|SMTP)",
+        "(torrent|.torrent|peer_id=|info_hash|get_peers|find_node|BitTorrent|announce_peer|announce.php?passkey=|magnet:|xunlei|sandai|Thunder|XLLiveUD|bt_key)",
+        "(^.@)(guerrillamail|guerrillamailblock|sharklasers|grr|pokemail|spam4|bccto|chacuo|027168).(info|biz|com|de|net|org|me|la)",
+        "(.?)(xunlei|sandai|Thunder|XLLiveUD)(.)",
+        "(.*.||)(dafahao|mingjinglive|botanwang|minghui|dongtaiwang|falunaz|epochtimes|ntdtv|falundafa|falungong|wujieliulan|zhengjian).(org|com|net)",
+        "(.*.||)(netvigator|torproject).(com|net|org)",
+        "(..||)(visa|mycard|gash|beanfun|bank).",
+        "(.*.||)(gov|talk.news.pts.org|creaders|zhuichaguoji|efcc.org|cyberpolice|aboluowang|tuidang|epochtimes|zhengjian|mingjingnews|inmediahk|xinsheng|breakgfw|chengmingmag|jinpianwang|qi-gong|mhradio|edoors|renminbao|soundofhope|xizang-zhiye|bannedbook|ntdtv|secretchina|dajiyuan|boxun|chinadigitaltimes|dwnews|huaglad|oneplusnews|epochweekly).(com|org|net|club|fr|tw|hk|eu|info|me)",
+        "(.*.||)(miaozhen|cnzz|talkingdata|umeng).(com)",
+        "(.*.||)(mycard).(com|tw)",
+        "(.*.||)(gash).(com|tw)",
+        "(.bank.)",
+        "(.*.||)(pincong).(rocks)",
+        "(.*.||)(taobao).com",
+         "(.*.||)(laomoe|jiyou|ssss|lolicp|vv1234|0z|4321q|868123|ksweb|mm126|ping0).(com|cloud|fun|gs|xyz|cc)",
+        "(flows|miaoko).(pages).(dev)"
+      ],
         "outbound": "block"
       },
       {
@@ -96,9 +97,20 @@
         "outbound": "direct",  // 其他流量直连
         "network": ["udp", "tcp"]
       }
+    ],
+    "rule_set": [
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "proxy"
+      }
     ]
   },
   "experimental": {
-    "cache_file": { "enabled": true }  // 启用缓存
+    "cache_file": {
+      "enabled": true // required to save rule-set cache
+    }
   }
 }
