@@ -19,7 +19,7 @@
       "type": "block"
     },
     {
-      "tag": "socks_proxy",  //warp的本地 SOCKS 代理
+      "tag": "socks_proxy",  // warp的本地 SOCKS 代理
       "type": "socks",
       "server": "127.0.0.1",
       "server_port": 40000
@@ -32,8 +32,25 @@
         "outbound": "block"
       },
       {
-        "rule_set": "geoip-cn",
+        "port": [
+          143,
+          200,
+          445,
+          465,
+          587,
+          3306,
+          4444,
+          5555,
+          6379,
+          6969,
+          8333,
+          9050
+        ],
         "outbound": "block"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "block" // 也可以改成"socks_proxy"，让cn的ip走warp出口
       },
       {
   "domain_regex": [  // 拦截的域名规则（有需要可以继续添加）
@@ -98,7 +115,7 @@
         "network": ["udp", "tcp"]
       }
     ],
-    "rule_set": [
+    "rule_set": [  // 新版singbox远程获取geoip规则集
       {
         "tag": "geoip-cn",
         "type": "remote",
