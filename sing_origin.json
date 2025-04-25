@@ -129,8 +129,6 @@
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs",
       }
     ]
-  }
-    ]
   },
   "experimental": {
     "cache_file": {
