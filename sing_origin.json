@@ -136,6 +136,7 @@
           "hanime1.me", 
           "browserscan.net",  // IP 检测
           "test-ipv6", 
+          "itdog.cn", 
           "ipleak.net" 
         ],
         "outbound": "socks_proxy"
