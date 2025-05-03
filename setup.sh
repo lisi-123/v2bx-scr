@@ -35,7 +35,7 @@ wget -N https://raw.githubusercontent.com/wyx2685/V2bX-script/master/install.sh 
 sudo timedatectl set-timezone Asia/Shanghai
 
 # 安装warp并设置本地socks5代理
-wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh <<< $'2\n13\n40000\n1\n'
+wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh <<< $'2\n5\n1\n1\n40000\n'
 
 # 添加定时任务（凌晨4点自动重启v2bx，每分钟检测warp状态）
 CRON_JOB1='0 4 * * * /usr/bin/v2bx restart'
