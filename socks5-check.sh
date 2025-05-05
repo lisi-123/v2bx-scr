@@ -20,5 +20,5 @@ elif check_url "https://cp.cloudflare.com/generate_204"; then
     echo "SOCKS5 代理正常（通过 Cloudflare）"
 else
     echo "SOCKS5 代理不可用，执行 warp"
-    /bin/warp y
+    /bin/warp r
 fi
