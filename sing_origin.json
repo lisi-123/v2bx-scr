@@ -117,11 +117,9 @@
           "ytimg.com", // YouTube
           "youtube.com", 
           "instagram.com", // 社交媒体
-          "cdninstagram.com", 
           "facebook.com", 
           "fbcdn.net", 
           "fbsbx.com", 
-          "instagramad.com", 
           "akamaihd.net", 
           "stripe.com", // 支付
           "amazon",  // 亚马逊
