@@ -28,7 +28,7 @@ mkdir -p /etc/iptables
 sudo iptables-save > /etc/iptables/rules.v4
 sudo ip6tables-save > /etc/iptables/rules.v6
 
-# 执行其他安装指令
+# 安装v2bx
 wget -N https://raw.githubusercontent.com/wyx2685/V2bX-script/master/install.sh && bash install.sh v0.1.10
 
 # 修改为上海时区
