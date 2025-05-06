@@ -17,6 +17,9 @@ done
 # 赋予 socks5-check.sh 可执行权限
 chmod +x /root/v2bx-scr/socks5-check.sh
 
+# 检测并添加虚拟内存
+chmod +x /root/v2bx-scr/swap.sh && /root/v2bx-scr/swap.sh
+
 # 安装 iptables-persistent（自动回答“是”）
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y iptables-persistent
 
