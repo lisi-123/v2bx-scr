@@ -40,3 +40,12 @@ xiao佬的v2bx: https://github.com/wyx2685/V2bX
 
 
 <br>
+
+科技lion脚本大全
+
+```bash
+curl -sS -O https://raw.githubusercontent.com/kejilion/sh/main/kejilion.sh && chmod +x kejilion.sh && ./kejilion.sh
+
+```
+
+<br>
