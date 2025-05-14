@@ -12,7 +12,7 @@ apt-get install wget -y && wget -O setup.sh https://raw.githubusercontent.com/li
 
 ### 说明
 
-+ 脚本自带端口映射：UDP 35000-36000 转发到 50000
++ 脚本自带端口映射：UDP 35000-36000 转发到 50000 （hy2端口跳跃）
 
 + warp默认ipv4优先，如果需要ipv6优先
 
