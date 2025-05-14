@@ -35,7 +35,7 @@ apt-get install wget -y && wget -O setup.sh https://raw.githubusercontent.com/li
 
 当vps同时存在v4和v6,且v6优先时候，可能会导致安装脚本出问题
 
-执行以下脚本可临时禁用ipv6，重启vps即可恢复
+执行以下脚本可临时禁用ipv6。如果要取消对v6的禁用,重启vps即可
 
 ```bash
 sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
