@@ -9,14 +9,23 @@ apt-get install wget -y && wget -O setup.sh https://raw.githubusercontent.com/li
 ```
 
 <br>
+<br>
 
 ### 说明
 
 + 脚本自带端口映射：UDP 35000-36000 转发到 50000 （hy2端口跳跃）
 
+<br>
+
++ 自动安装warp并设置本地socks5代理，让需要的网站走warp的socks5代理
+
+  &nbsp;&nbsp;&nbsp;可修改 route.json 和 sing_origin.json 增加或者删除走warp的网站
+
+<br>
+
 + warp默认ipv4优先，如果需要ipv6优先
 
-  &nbsp;&nbsp;&nbsp;修改 /etc/V2bX/config.json 中的 SendIP 为
+   &nbsp;&nbsp;&nbsp;修改 /etc/V2bX/config.json 中的 SendIP 为
   
 ```bash
 "SendIP": "::",
@@ -47,5 +56,17 @@ xiao佬的v2bx: https://github.com/wyx2685/V2bX
 curl -sS -O https://raw.githubusercontent.com/kejilion/sh/main/kejilion.sh && chmod +x kejilion.sh && ./kejilion.sh
 
 ```
+
+<br>
+
+## 有问题联系 
+
+[https://t.me.talkingstick233_bot](https://t.me/talkingstick233_bot
+
+<br>
+)
+
+
+
 
 <br>
