@@ -61,12 +61,6 @@ curl -sS -O https://raw.githubusercontent.com/kejilion/sh/main/kejilion.sh && ch
 
 ## 有问题联系 
 
-[https://t.me.talkingstick233_bot](https://t.me/talkingstick233_bot
-
-<br>
-)
-
-
-
+[https://t.me.talkingstick233_bot](https://t.me/talkingstick233_bot)
 
 <br>
