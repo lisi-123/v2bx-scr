@@ -67,6 +67,10 @@
             ]
         },
         {
+            "outboundTag": "socks5-warp",
+            "domain": [ "geosite:cn"]
+        },
+        {
             "outboundTag": "block",
             "ip": [
                 "127.0.0.1/32",
