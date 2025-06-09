@@ -40,13 +40,18 @@ sudo timedatectl set-timezone Asia/Shanghai
 # 安装warp并设置本地socks5代理
 wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh <<< $'2\n5\n1\n1\n40000\n'
 
+# 限制warp内存占用
+sudo mkdir -p /etc/systemd/system/warp-svc.service.d && echo -e "[Service]\nMemoryMax=150M" | sudo tee /etc/systemd/system/warp-svc.service.d/override.conf
+sudo systemctl daemon-reexec
+sudo systemctl daemon-reload
+sudo systemctl restart warp-svc
+
 # 添加定时任务（凌晨4点自动重启v2bx，每分钟检测warp状态）
 CRON_JOB1='0 4 * * * /usr/bin/v2bx restart'
 CRON_JOB2='* * * * * /root/v2bx-scr/socks5-check.sh'
 
 # 将任务添加到 crontab 并避免重复
 (crontab -l 2>/dev/null; echo "$CRON_JOB1"; echo "$CRON_JOB2") | sort -u | crontab -
-
 
 # 替换路由文件
 sudo cp -f /root/v2bx-scr/route.json /etc/V2bX/
