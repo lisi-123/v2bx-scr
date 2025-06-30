@@ -14,8 +14,9 @@ until git clone https://github.com/lisi-123/v2bx-scr.git; do
   echo "git clone 失败，3 秒后重试..."; sleep 3;
 done
 
-# 赋予 socks5-check.sh 可执行权限
+# 赋予可执行权限
 chmod +x /root/v2bx-scr/socks5-check.sh
+chmod +x /root/clean_logs.sh
 
 # 检测并添加虚拟内存
 chmod +x /root/v2bx-scr/swap.sh && /root/v2bx-scr/swap.sh
@@ -46,12 +47,13 @@ sudo systemctl daemon-reexec
 sudo systemctl daemon-reload
 sudo systemctl restart warp-svc
 
-# 添加定时任务（凌晨4点自动重启v2bx，每分钟检测warp状态）
+# 添加定时任务（凌晨4点自动重启v2bx，每分钟检测warp状态，自动清理vps日志）
 CRON_JOB1='0 4 * * * /usr/bin/v2bx restart'
 CRON_JOB2='* * * * * /root/v2bx-scr/socks5-check.sh'
+CRON_JOB3='0 5 * * * /root/v2bx-scr/clean_logs.sh'
 
 # 将任务添加到 crontab 并避免重复
-(crontab -l 2>/dev/null; echo "$CRON_JOB1"; echo "$CRON_JOB2") | sort -u | crontab -
+(crontab -l 2>/dev/null; echo "$CRON_JOB1"; echo "$CRON_JOB2"; echo "$CRON_JOB3") | sort -u | crontab -
 
 # 替换路由文件
 sudo cp -f /root/v2bx-scr/route.json /etc/V2bX/
