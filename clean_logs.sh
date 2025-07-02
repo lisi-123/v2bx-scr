@@ -9,3 +9,4 @@ find /var/log -type f -name "*.1" -delete
 
 # 控制 journal 日志占用不超过 100M
 journalctl --vacuum-size=100M
+
