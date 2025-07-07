@@ -135,6 +135,7 @@
           "browserscan.net",  // IP 检测
           "test-ipv6", 
           "itdog.cn", 
+          "gstatic.com", 
           "ipleak.net" 
         ],
         "outbound": "socks_proxy"
