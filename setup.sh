@@ -8,6 +8,7 @@ apt install sudo -y
 sudo apt install git -y
 sudo apt install curl -y
 sudo apt install nano -y
+sudo DEBIAN_FRONTEND=noninteractive apt install -y iptables-persistent
 
 # 拉取库
 until git clone https://github.com/lisi-123/v2bx-scr.git; do
