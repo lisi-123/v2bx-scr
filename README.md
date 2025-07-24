@@ -58,6 +58,16 @@ curl -sS -O https://raw.githubusercontent.com/kejilion/sh/main/kejilion.sh && ch
 
 <br>
 
+
+安装脚本（去除warp的版本）：
+
+```bash
+apt-get install wget -y && wget -O setup1.sh https://raw.githubusercontent.com/lisi-123/v2bx-scr/main/setup1.sh && chmod +x setup1.sh && ./setup1.sh
+
+```
+
+<br>
+
 ## 有问题联系 
 
 [https://t.me.talkingstick233_bot](https://t.me/talkingstick233_bot)
