@@ -17,7 +17,7 @@ done
 
 # 赋予可执行权限
 chmod +x /root/v2bx-scr/socks5-check.sh
-chmod +x /root/clean_logs.sh
+chmod +x /root/v2bx-scr/clean_logs.sh
 
 # 检测并添加虚拟内存
 chmod +x /root/v2bx-scr/swap.sh && /root/v2bx-scr/swap.sh
