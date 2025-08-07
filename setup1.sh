@@ -16,7 +16,7 @@ until git clone https://github.com/lisi-123/v2bx-scr.git; do
 done
 
 # 赋予可执行权限
-chmod +x /root/clean_logs.sh
+chmod +x /root/v2bx-scr/clean_logs.sh
 
 # 检测并添加虚拟内存
 chmod +x /root/v2bx-scr/swap.sh && /root/v2bx-scr/swap.sh
