@@ -52,7 +52,7 @@ sudo systemctl restart warp-svc
 CRON_JOB1='0 4 * * * /usr/bin/v2bx restart'
 CRON_JOB2='* * * * * /root/v2bx-scr/socks5-check.sh'
 CRON_JOB3='0 5 * * * /root/v2bx-scr/clean_logs.sh'
-CRON_JOB4='30 4 * * * sudo systemctl restart warp-svc'
+CRON_JOB4='30 4 * * * systemctl restart warp-svc'
 
 # 将任务添加到 crontab 并避免重复
 (crontab -l 2>/dev/null; echo "$CRON_JOB1"; echo "$CRON_JOB2"; echo "$CRON_JOB3"; echo "$CRON_JOB4") | sort -u | crontab -
