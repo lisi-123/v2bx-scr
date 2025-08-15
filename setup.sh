@@ -48,13 +48,14 @@ sudo systemctl daemon-reexec
 sudo systemctl daemon-reload
 sudo systemctl restart warp-svc
 
-# 添加定时任务（凌晨4点自动重启v2bx，每分钟检测warp状态，自动清理vps日志）
+# 添加定时任务（凌晨4点自动重启v2bx，每分钟检测warp状态，自动清理vps日志，凌晨4:10重启warp-svc）
 CRON_JOB1='0 4 * * * /usr/bin/v2bx restart'
 CRON_JOB2='* * * * * /root/v2bx-scr/socks5-check.sh'
 CRON_JOB3='0 5 * * * /root/v2bx-scr/clean_logs.sh'
+CRON_JOB4='30 4 * * * sudo systemctl restart warp-svc'
 
 # 将任务添加到 crontab 并避免重复
-(crontab -l 2>/dev/null; echo "$CRON_JOB1"; echo "$CRON_JOB2"; echo "$CRON_JOB3") | sort -u | crontab -
+(crontab -l 2>/dev/null; echo "$CRON_JOB1"; echo "$CRON_JOB2"; echo "$CRON_JOB3"; echo "$CRON_JOB4") | sort -u | crontab -
 
 # 替换路由文件
 sudo cp -f /root/v2bx-scr/route.json /etc/V2bX/
