@@ -50,15 +50,6 @@ xiao佬的v2bx: https://github.com/wyx2685/V2bX
 
 <br>
 
-科技lion脚本大全
-
-```bash
-curl -sS -O https://raw.githubusercontent.com/kejilion/sh/main/kejilion.sh && chmod +x kejilion.sh && ./kejilion.sh
-
-```
-
-<br>
-
 
 安装脚本（去除warp的版本）：
 
@@ -69,6 +60,14 @@ apt-get install wget -y && wget -O setup1.sh https://raw.githubusercontent.com/l
 
 <br>
 
+科技lion脚本大全
+
+```bash
+curl -sS -O https://raw.githubusercontent.com/kejilion/sh/main/kejilion.sh && chmod +x kejilion.sh && ./kejilion.sh
+
+```
+
+<br>
 ## 有问题联系 
 
 [https://t.me.talkingstick233_bot](https://t.me/talkingstick233_bot)
