@@ -60,7 +60,7 @@ apt-get install wget -y && wget -O setup1.sh https://raw.githubusercontent.com/l
 
 <br>
 
-科技lion脚本大全
+科技lion脚本大全（有需要可自行安装）
 
 ```bash
 curl -sS -O https://raw.githubusercontent.com/kejilion/sh/main/kejilion.sh && chmod +x kejilion.sh && ./kejilion.sh
