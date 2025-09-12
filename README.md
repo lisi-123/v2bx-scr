@@ -17,9 +17,9 @@ apt-get install wget -y && wget -O setup.sh https://raw.githubusercontent.com/li
 
 <br>
 
-+ 自动安装warp并设置本地socks5代理，让需要的网站走warp的socks5代理
++ 自动安装warp并设置本地socks5代理，让需要的网站使用warp的socks5代理
 
-  &nbsp;&nbsp;&nbsp;可修改 route.json 和 sing_origin.json 增加或者删除走warp的网站
+  &nbsp;&nbsp;&nbsp;可修改 route.json 和 sing_origin.json 增加或者删除使用warp的网站
 
 <br>
 
