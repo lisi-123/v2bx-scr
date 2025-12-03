@@ -13,9 +13,6 @@ apt-get install wget -y && wget -O setup.sh https://raw.githubusercontent.com/li
 
 ### 说明
 
-+ 脚本自带端口映射：UDP 35000-36000 转发到 50000 （hy2端口跳跃）
-
-<br>
 
 + 自动安装warp并设置本地socks5代理，让需要的网站使用warp的socks5代理
 
@@ -47,16 +44,6 @@ sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
 
 xiao佬的v2bx: https://github.com/wyx2685/V2bX
 
-
-<br>
-
-
-安装脚本（去除warp的版本）：
-
-```bash
-apt-get install wget -y && wget -O setup1.sh https://raw.githubusercontent.com/lisi-123/v2bx-scr/main/setup1.sh && chmod +x setup1.sh && ./setup1.sh
-
-```
 
 <br>
 
