@@ -25,14 +25,6 @@ chmod +x /root/v2bx-scr/swap.sh && /root/v2bx-scr/swap.sh
 # 安装 iptables-persistent（自动回答“是”）
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y iptables-persistent
 
-# 添加规则（UDP 35000-36000 转发到 50000）
-sudo iptables -t nat -A PREROUTING -p udp --dport 35000:36000 -j REDIRECT --to-port 50000
-
-# 保存规则
-mkdir -p /etc/iptables
-sudo iptables-save > /etc/iptables/rules.v4
-sudo ip6tables-save > /etc/iptables/rules.v6
-
 # 安装v2bx
 wget -N https://raw.githubusercontent.com/wyx2685/V2bX-script/master/install.sh && bash install.sh v0.3.5
 
