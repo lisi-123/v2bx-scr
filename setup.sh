@@ -25,6 +25,10 @@ chmod +x /root/v2bx-scr/swap.sh && /root/v2bx-scr/swap.sh
 # 安装 iptables-persistent（自动回答“是”）
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y iptables-persistent
 
+# 开启 TFO
+echo "net.ipv4.tcp_fastopen=3" >> /etc/sysctl.conf
+sysctl -p
+
 # 安装v2bx
 wget -N https://raw.githubusercontent.com/wyx2685/V2bX-script/master/install.sh && bash install.sh v0.3.5
 
