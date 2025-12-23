@@ -54,9 +54,9 @@ CRON_JOB4='30 4 * * * systemctl restart warp-svc'
 (crontab -l 2>/dev/null; echo "$CRON_JOB1"; echo "$CRON_JOB2"; echo "$CRON_JOB3"; echo "$CRON_JOB4") | sort -u | crontab -
 
 # 替换路由文件
-sudo cp -f /root/v2bx-scr/route.json /etc/V2bX/
-sudo cp -f /root/v2bx-scr/custom_outbound.json /etc/V2bX/
-sudo cp -f /root/v2bx-scr/sing_origin.json /etc/V2bX/
+cp -f /root/v2bx-scr/route.json /etc/V2bX/
+cp -f /root/v2bx-scr/custom_outbound.json /etc/V2bX/
+cp -f /root/v2bx-scr/sing_origin.json /etc/V2bX/
 
 V2bX restart
 
