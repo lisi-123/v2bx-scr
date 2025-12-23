@@ -46,7 +46,7 @@ sudo systemctl restart warp-svc
 
 # 添加定时任务（凌晨4点自动重启v2bx，每分钟检测warp状态，自动清理vps日志，凌晨4:30重启warp-svc）
 CRON_JOB1='0 4 * * * /usr/bin/v2bx restart'
-CRON_JOB2='* * * * * /root/v2bx-scr/socks5-check.sh'
+CRON_JOB2='*/2 * * * * /root/v2bx-scr/socks5-check.sh'
 CRON_JOB3='0 5 * * * /root/v2bx-scr/clean_logs.sh'
 CRON_JOB4='30 4 * * * systemctl restart warp-svc'
 
