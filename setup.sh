@@ -57,6 +57,7 @@ CRON_JOB4='30 4 * * * systemctl restart warp-svc'
 cp -f /root/v2bx-scr/route.json /etc/V2bX/
 cp -f /root/v2bx-scr/custom_outbound.json /etc/V2bX/
 cp -f /root/v2bx-scr/sing_origin.json /etc/V2bX/
+cp -f /root/v2bx-scr/hy2config.yaml /etc/V2bX/
 
 V2bX restart
 
