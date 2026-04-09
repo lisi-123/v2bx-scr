@@ -1,0 +1,22 @@
+quic:
+  initStreamReceiveWindow: 10485760
+  maxStreamReceiveWindow: 10485760
+  initConnReceiveWindow: 15728640
+  maxConnReceiveWindow: 15728640
+  maxIdleTimeout: 28s
+  maxIncomingStreams: 512
+  disablePathMTUDiscovery: true
+ignoreClientBandwidth: false
+disableUDP: false
+udpIdleTimeout: 60s
+resolver:
+  type: system
+acl:
+  inline:
+    - direct(geosite:google)
+    - reject(geosite:cn)
+    - reject(geoip:cn)
+masquerade:
+  type: file
+  file:
+    dir: /var/www/html
