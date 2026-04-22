@@ -42,6 +42,17 @@ sed -i '
 # 写入新配置
 cat >> "$CONF" << 'EOF'
 
+# 系统资源
+fs.file-max = 2147483584
+vm.overcommit_memory = 1
+
+# 网络连接跟踪（iptables/warp相关）
+net.netfilter.nf_conntrack_max = 262144
+net.netfilter.nf_conntrack_buckets = 65536
+
+# TCP 队列
+net.core.somaxconn = 1024
+
 # BBR 优化
 net.core.default_qdisc=fq
 net.ipv4.tcp_congestion_control=bbr
