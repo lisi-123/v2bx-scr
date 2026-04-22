@@ -22,12 +22,50 @@ chmod +x /root/v2bx-scr/clean_logs.sh
 # 检测并添加虚拟内存
 chmod +x /root/v2bx-scr/swap.sh && /root/v2bx-scr/swap.sh
 
-# 安装 iptables-persistent（自动回答“是”）
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y iptables-persistent
+# 网络调优
+CONF="/etc/sysctl.conf"
 
-# 开启 TFO
-echo "net.ipv4.tcp_fastopen=3" >> /etc/sysctl.conf
-sysctl -p
+# 删除旧配置
+sed -i '
+/net.core.default_qdisc/d
+/net.ipv4.tcp_congestion_control/d
+/net.ipv4.tcp_ecn/d
+/net.ipv4.tcp_fastopen/d
+/net.ipv4.tcp_mtu_probing/d
+/net.ipv4.tcp_notsent_lowat/d
+/net.ipv4.tcp_limit_output_bytes/d
+/net.ipv4.tcp_sack/d
+/net.ipv4.tcp_timestamps/d
+/net.ipv4.tcp_window_scaling/d
+' "$CONF"
+
+# 写入新配置
+cat >> "$CONF" << 'EOF'
+
+# BBR 优化
+net.core.default_qdisc=fq
+net.ipv4.tcp_congestion_control=bbr
+
+# TCP 优化
+net.ipv4.tcp_ecn=0
+net.ipv4.tcp_fastopen=3
+net.ipv4.tcp_fastopen_blackhole_timeout_sec=60
+net.ipv4.tcp_mtu_probing=1
+
+# 发送控制
+net.ipv4.tcp_notsent_lowat=16384
+net.ipv4.tcp_limit_output_bytes=131072
+
+# 基础功能
+net.ipv4.tcp_sack=1
+net.ipv4.tcp_timestamps=1
+net.ipv4.tcp_window_scaling=1
+
+EOF
+
+# 应用配置
+sysctl --system
+
 
 # 安装v2bx
 wget -N https://raw.githubusercontent.com/wyx2685/V2bX-script/master/install.sh && bash install.sh v0.3.5
