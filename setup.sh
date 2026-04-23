@@ -60,12 +60,10 @@ net.ipv4.tcp_congestion_control=bbr
 # TCP 优化
 net.ipv4.tcp_ecn=0
 net.ipv4.tcp_fastopen=3
-net.ipv4.tcp_fastopen_blackhole_timeout_sec=60
 net.ipv4.tcp_mtu_probing=1
 
 # 发送控制
-net.ipv4.tcp_notsent_lowat=16384
-net.ipv4.tcp_limit_output_bytes=131072
+net.ipv4.tcp_limit_output_bytes=102400
 
 # 基础功能
 net.ipv4.tcp_sack=1
