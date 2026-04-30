@@ -30,6 +30,7 @@
     "regexp:sentry",
     "regexp:stripe",
     "regexp:test-ipv6",
+    "regexp:tiktok",
     "regexp:wechat",
     "regexp:whatsapp",
     "regexp:youtube",
